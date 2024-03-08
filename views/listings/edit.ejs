@@ -84,8 +84,35 @@
           Location name should be valid
         </div>
       </div>
+      <div class="form-group">
+    <label for="dropdown">Select Category:</label>
+    <select class="form-control" id="dropdown" name="listing[category]">
+    </select>
+</div>
+
       <br />
       <button class="btn btn-lg btn-dark mb-3 add-btn">Save</button>
     </form>
   </div>
 </div>
+
+<script>
+  
+  const  select = document.querySelector("select");
+  const category  = ["Room", "Iconic Cities", "Mountains", "Castles", "Farms", "Camping","Arctic","Domes"];
+   let listing =  <%-JSON.stringify(listing)%>; 
+
+   for(let i of category) {
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    if(i == listing.category){
+      opt.selected=true;
+    }
+    select.appendChild(opt);
+   }
+  console.log(listing);
+
+
+
+</script>

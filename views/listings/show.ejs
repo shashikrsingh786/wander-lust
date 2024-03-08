@@ -2,7 +2,8 @@
 <script>
   const mapboxToken = "<%=process.env.MAPBOX_TOKEN%>";
   
-  let listing =  <%-JSON.stringify(listing)%>; // [longitude, latitude]
+  let listing =  <%-JSON.stringify(listing)%>; 
+  console.log(listing);
 </script>
 <div class="row">
   <div class="col-8 offset-2">
@@ -28,6 +29,9 @@
         </p>
         <p class="card-text">
           <strong>Country: </strong><%= listing.country %>
+        </p>
+        <p class="card-text">
+          <strong>Category: </strong><%= listing.category %>
         </p>
       </div>
     </div>
